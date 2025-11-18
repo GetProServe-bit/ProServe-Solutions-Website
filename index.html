@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ProServe Solutions | Small Business Setup & Systems</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ProServe Solutions helps small businesses with EIN, LLC, SAM.gov, Google Business, websites, CRM and systems so you can focus on running your business." />
+  <style>
+    :root {
+      --blue: #1A73E8;
+      --dark: #111827;
+      --light: #f3f4f6;
+      --border: #e5e7eb;
+      --text: #111827;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #ffffff;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    .page { max-width: 1100px; margin: 0 auto; padding: 24px 16px 64px; }
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; margin-bottom: 24px;
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 10px; }
+    .logo-img {
+      width: 70px; height: 70px; object-fit: contain; border-radius: 12px;
+    }
+    .brand-text { display: flex; flex-direction: column; }
+    .brand-text h1 { font-size: 22px; font-weight: 700; color: var(--dark); }
+    .brand-text span { font-size: 12px; color: #6b7280; }
+    .header-contact { text-align: right; font-size: 13px; }
+    .header-contact a { color: var(--blue); font-weight: 600; }
+    .tag-badge {
+      display: inline-block; background: #e0edff; color: var(--blue);
+      padding: 2px 8px; border-radius: 999px; font-size: 11px; margin-top: 4px;
+    }
+    .hero {
+      border-radius: 18px; padding: 24px 22px;
+      background: linear-gradient(135deg, #e0edff, #ffffff);
+      border: 1px solid #d1e3ff; margin-bottom: 32px;
+    }
+    .hero h2 { font-size: 24px; margin-bottom: 8px; color: var(--dark); }
+    .hero p { font-size: 14px; color: #4b5563; max-width: 600px; }
+    .hero-bottom {
+      display: flex; flex-wrap: wrap; align-items: center;
+      justify-content: space-between; margin-top: 18px; gap: 14px;
+    }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn-primary {
+      background: var(--blue); color: #ffffff; padding: 10px 18px;
+      border-radius: 999px; border: none; font-size: 14px; font-weight: 600;
+      cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+    }
+    .btn-secondary {
+      background: #ffffff; color: var(--blue); padding: 9px 16px;
+      border-radius: 999px; border: 1px solid #c4d9ff;
+      font-size: 13px; font-weight: 500; cursor: pointer;
+    }
+    .hero-points {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      font-size: 12px; color: #4b5563;
+    }
+    .pill {
+      padding: 4px 10px; background: #f3f4ff;
+      border-radius: 999px; border: 1px solid #e5e7eb;
+    }
+    section { margin-bottom: 32px; }
+    .section-title { font-size: 18px; color: var(--dark); margin-bottom: 8px; }
+    .section-subtitle { font-size: 13px; color: #6b7280; margin-bottom: 12px; }
+    .grid { display: grid; gap: 14px; }
+    @media (min-width: 768px) {
+      .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+      .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    .card {
+      border-radius: 14px; border: 1px solid var(--border);
+      background: #ffffff; padding: 14px 14px 16px;
+    }
+    .card h3 { font-size: 14px; margin-bottom: 4px; color: var(--dark); }
+    .card p { font-size: 12px; color: #6b7280; margin-bottom: 6px; }
+    .chip {
+      display: inline-block; font-size: 10px; background: #e5f0ff;
+      color: var(--blue); padding: 2px 8px; border-radius: 999px;
+      margin-bottom: 4px;
+    }
+    .card ul { list-style: none; padding-left: 0; font-size: 11px; color: #4b5563; }
+    .card ul li::before { content: "• "; color: var(--blue); font-weight: 700; }
+    .price { font-size: 18px; font-weight: 700; color: var(--blue); margin: 6px 0; }
+    .price-note { font-size: 11px; color: #6b7280; margin-bottom: 8px; }
+    .highlight {
+      border: 1.5px solid var(--blue);
+      box-shadow: 0 10px 25px rgba(26, 115, 232, 0.08);
+      position: relative;
+    }
+    .highlight-tag {
+      position: absolute; top: 10px; right: 10px; font-size: 10px;
+      background: #1a73e8; color: #ffffff; padding: 2px 8px; border-radius: 999px;
+    }
+    .process-step {
+      display: flex; gap: 10px; align-items: flex-start;
+      font-size: 12px; margin-bottom: 8px;
+    }
+    .step-number {
+      width: 22px; height: 22px; border-radius: 999px;
+      border: 1px solid #c4d9ff; display: flex; align-items: center;
+      justify-content: center; font-size: 11px; color: var(--blue);
+      font-weight: 600; background: #eef4ff; flex-shrink: 0;
+    }
+    .step-text { color: #4b5563; }
+    .step-text b { color: var(--dark); }
+    .contact-box {
+      border-radius: 16px; padding: 16px 18px;
+      background: #0f172a; color: #e5e7eb;
+      display: flex; flex-wrap: wrap; justify-content: space-between;
+      align-items: center; gap: 12px;
+    }
+    .contact-box p { font-size: 13px; max-width: 420px; }
+    .contact-details { font-size: 12px; line-height: 1.6; }
+    .contact-details a { color: #bfdbfe; }
+    footer {
+      margin-top: 18px; font-size: 11px;
+      text-align: center; color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo-wrap">
+        <img src="proserve-logo.png" alt="ProServe Solutions Logo" class="logo-img" />
+        <div class="brand-text">
+          <h1>ProServe Solutions</h1>
+          <span>Small Business Setup • Systems • Compliance</span>
+          <span class="tag-badge">Based in Ansonia, CT</span>
+        </div>
+      </div>
+      <div class="header-contact">
+        <div>Email: <a href="mailto:getproserve@outlook.com">getproserve@outlook.com</a></div>
+        <div>Address: 113 Division St, Ansonia, CT</div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <h2>We handle the setup and systems so you can run the business.</h2>
+      <p>
+        ProServe Solutions helps small business owners get fully set up and cleaned up —
+        from EIN and LLC to SAM.gov, Google Business, websites, and basic automations.
+      </p>
+      <div class="hero-bottom">
+        <div class="hero-cta">
+          <a href="mailto:getproserve@outlook.com?subject=ProServe%20Solutions%20Inquiry" class="btn-primary">
+            Get Started with ProServe
+          </a>
+          <a href="#packages" class="btn-secondary">
+            View Packages
+          </a>
+        </div>
+        <div class="hero-points">
+          <span class="pill">Done-for-you setup</span>
+          <span class="pill">No corporate jargon</span>
+          <span class="pill">Built for small businesses</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Core Services</h2>
+      <p class="section-subtitle">Everything you need to look legitimate, organized, and ready for better clients.</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <span class="chip">Business Basics</span>
+          <h3>EIN & LLC Guidance</h3>
+          <p>We walk you through getting your EIN and forming your LLC the right way in your state.</p>
+          <ul>
+            <li>EIN application support</li>
+            <li>LLC formation guidance</li>
+            <li>State registration basics</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="chip">Government Ready</span>
+          <h3>SAM.gov & UEI Setup</h3>
+          <p>We help you complete the registrations required to work with government and larger clients.</p>
+          <ul>
+            <li>SAM.gov registration steps</li>
+            <li>UEI / federal identifier assistance</li>
+            <li>Document & info checklist</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="chip">Digital Presence</span>
+          <h3>Google Business & Website</h3>
+          <p>We make sure people can find you online and contact you easily.</p>
+          <ul>
+            <li>Google Business Profile setup</li>
+            <li>Simple, clean website build</li>
+            <li>Basic SEO & contact forms</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="packages">
+      <h2 class="section-title">Packages</h2>
+      <p class="section-subtitle">Clear, transparent offers designed for real small businesses.</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Starter Launch</h3>
+          <div class="price">$297</div>
+          <div class="price-note">One-time setup</div>
+          <ul>
+            <li>EIN guidance</li>
+            <li>LLC guidance (state basics)</li>
+            <li>Business email setup</li>
+            <li>Google Business Profile setup</li>
+            <li>Starter document pack (invoice, quote, intake)</li>
+          </ul>
+        </div>
+
+        <div class="card highlight">
+          <div class="highlight-tag">Most Popular</div>
+          <h3>Business Systems</h3>
+          <div class="price">$797</div>
+          <div class="price-note">One-time setup • Systems included</div>
+          <ul>
+            <li>Everything in Starter Launch</li>
+            <li>2–4 page website (service, about, contact)</li>
+            <li>Lead capture form & basic CRM setup</li>
+            <li>Review request system</li>
+            <li>Basic follow-up automation (up to 3 messages)</li>
+            <li>Branded proposal & invoice templates</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Growth & Gov-Ready</h3>
+          <div class="price">$1,497</div>
+          <div class="price-note">For serious growth & larger clients</div>
+          <ul>
+            <li>Everything in Business Systems</li>
+            <li>SAM.gov registration support</li>
+            <li>UEI / federal ID assistance</li>
+            <li>Vendor & basic licensing checklist</li>
+            <li>Custom business docs (up to 5)</li>
+            <li>Priority onboarding support</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle">Simple process. No fluff, no confusion.</p>
+      <div class="card">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div class="step-text">
+            <b>Quick intro call or email.</b><br />
+            You tell us what stage you’re at and which package makes the most sense.
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div class="step-text">
+            <b>Intake form + documents.</b><br />
+            We send you a simple intake form and a short list of items we need.
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div class="step-text">
+            <b>We handle the setup & systems.</b><br />
+            You get updates as we complete your registrations, profiles, and tools.
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <div class="step-text">
+            <b>Final handoff + support.</b><br />
+            You receive all logins, documents, and a simple checklist of what’s done.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="contact-box">
+        <div>
+          <h3 style="font-size:15px; margin-bottom:4px;">Ready to get your business set up properly?</h3>
+          <p>
+            Send us a quick email with your name, business (or idea), and which package you’re interested in.
+            We’ll respond with next steps and a simple intake form.
+          </p>
+        </div>
+        <div class="contact-details">
+          <div><b>Email:</b> <a href="mailto:getproserve@outlook.com">getproserve@outlook.com</a></div>
+          <div><b>Location:</b> 113 Division St, Ansonia, CT</div>
+          <div><b>Hours:</b> By appointment</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> ProServe Solutions. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
