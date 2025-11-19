@@ -31,12 +31,12 @@
     .brand-text { display: flex; flex-direction: column; }
     .brand-text h1 { font-size: 22px; font-weight: 700; color: var(--dark); }
     .brand-text span { font-size: 12px; color: #6b7280; }
-    .header-contact { text-align: right; font-size: 13px; }
-    .header-contact a { color: var(--blue); font-weight: 600; }
     .tag-badge {
       display: inline-block; background: #e0edff; color: var(--blue);
       padding: 2px 8px; border-radius: 999px; font-size: 11px; margin-top: 4px;
     }
+    .header-contact { text-align: right; font-size: 13px; }
+    .header-contact a { color: var(--blue); font-weight: 600; }
     .hero {
       border-radius: 18px; padding: 24px 22px;
       background: linear-gradient(135deg, #e0edff, #ffffff);
@@ -67,7 +67,6 @@
       padding: 4px 10px; background: #f3f4ff;
       border-radius: 999px; border: 1px solid #e5e7eb;
     }
-    section { margin-bottom: 32px; }
     .section-title { font-size: 18px; color: var(--dark); margin-bottom: 8px; }
     .section-subtitle { font-size: 13px; color: #6b7280; margin-bottom: 12px; }
     .grid { display: grid; gap: 14px; }
@@ -93,18 +92,6 @@
       position: absolute; top: 10px; right: 10px; font-size: 10px;
       background: #1a73e8; color: #ffffff; padding: 2px 8px; border-radius: 999px;
     }
-    .process-step {
-      display: flex; gap: 10px; align-items: flex-start;
-      font-size: 12px; margin-bottom: 8px;
-    }
-    .step-number {
-      width: 22px; height: 22px; border-radius: 999px;
-      border: 1px solid #c4d9ff; display: flex; align-items: center;
-      justify-content: center; font-size: 11px; color: var(--blue);
-      font-weight: 600; background: #eef4ff; flex-shrink: 0;
-    }
-    .step-text { color: #4b5563; }
-    .step-text b { color: var(--dark); }
     .contact-box {
       border-radius: 16px; padding: 16px 18px;
       background: #0f172a; color: #e5e7eb;
@@ -122,6 +109,8 @@
 </head>
 <body>
   <div class="page">
+
+    <!-- HEADER -->
     <header>
       <div class="logo-wrap">
         <img src="proserve-logo.png" alt="ProServe Solutions Logo" class="logo-img" />
@@ -133,10 +122,12 @@
       </div>
       <div class="header-contact">
         <div>Email: <a href="mailto:getproserve@outlook.com">getproserve@outlook.com</a></div>
+        <div>Phone: <a href="tel:2039034807">(203) 903-4807</a></div>
         <div>Address: 113 Division St, Ansonia, CT</div>
       </div>
     </header>
 
+    <!-- HERO -->
     <section class="hero">
       <h2>We handle the setup and systems so you can run the business.</h2>
       <p>
@@ -148,8 +139,8 @@
           <a href="mailto:getproserve@outlook.com?subject=ProServe%20Solutions%20Inquiry" class="btn-primary">
             Get Started with ProServe
           </a>
-          <a href="#packages" class="btn-secondary">
-            View Packages
+          <a href="#services" class="btn-secondary">
+            View Services
           </a>
         </div>
         <div class="hero-points">
@@ -160,54 +151,66 @@
       </div>
     </section>
 
-    <section>
-      <h2 class="section-title">Core Services</h2>
-      <p class="section-subtitle">Everything you need to look legitimate, organized, and ready for better clients.</p>
+    <!-- ========================= SERVICES ========================= -->
+    <section id="services">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">
+        Clear, transparent services designed for real small businesses.
+      </p>
+
       <div class="grid grid-3">
         <div class="card">
           <h3>Business Setup</h3>
-          <p>We walk you through getting set up the right way in your state.</p>
+          <p>Get registered the right way and stay compliant.</p>
           <ul>
             <li>EIN assistance</li>
-            <li>LLC formation guidance</li>
+            <li>LLC guidance (state basics)</li>
             <li>Business registration support</li>
+            <li>Business email setup</li>
           </ul>
         </div>
-        <div class="card">
-          <h3>Government Readiness</h3>
-          <p>Support for registrations needed to work with bigger clients.</p>
-          <ul>
-            <li>Government registration support</li>
-            <li>Vendor / profile setup</li>
-            <li>Document & info checklist</li>
-          </ul>
-        </div>
+
         <div class="card">
           <h3>Online Presence</h3>
-          <p>We make sure people can find you online and contact you easily.</p>
+          <p>Make sure customers can find you online.</p>
           <ul>
             <li>Google Business Profile setup</li>
-            <li>Simple, clean website build</li>
+            <li>Simple 2–4 page website</li>
             <li>Basic SEO & contact forms</li>
+            <li>Lead capture system</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Government Readiness</h3>
+          <p>Everything you need to work with bigger agencies.</p>
+          <ul>
+            <li>Gov registration support</li>
+            <li>Vendor profile setup</li>
+            <li>Doc & licensing checklist</li>
+            <li>Business verification help</li>
           </ul>
         </div>
       </div>
     </section>
 
+    <!-- ========================= PACKAGES ========================= -->
     <section id="packages">
       <h2 class="section-title">Packages</h2>
-      <p class="section-subtitle">Clear, transparent offers designed for real small businesses.</p>
+      <p class="section-subtitle">Pick the option that fits your business needs.</p>
+
       <div class="grid grid-3">
+
         <div class="card">
           <h3>Starter Launch</h3>
           <div class="price">$297</div>
           <div class="price-note">One-time setup</div>
           <ul>
             <li>EIN assistance</li>
-            <li>LLC guidance (state basics)</li>
+            <li>LLC guidance</li>
             <li>Business email setup</li>
             <li>Google Business Profile setup</li>
-            <li>Starter document pack (invoice, quote, intake)</li>
+            <li>Starter doc pack</li>
           </ul>
         </div>
 
@@ -215,77 +218,44 @@
           <div class="highlight-tag">Most Popular</div>
           <h3>Business Systems</h3>
           <div class="price">$797</div>
-          <div class="price-note">One-time setup • Systems included</div>
+          <div class="price-note">Systems included</div>
           <ul>
             <li>Everything in Starter Launch</li>
-            <li>2–4 page website (service, about, contact)</li>
-            <li>Lead capture form & basic CRM setup</li>
+            <li>2–4 page website</li>
+            <li>Lead form & CRM setup</li>
             <li>Review request system</li>
-            <li>Basic follow-up automation (up to 3 messages)</li>
-            <li>Branded proposal & invoice templates</li>
+            <li>Follow-up automation</li>
+            <li>Proposal & invoice templates</li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Growth & Gov-Ready</h3>
           <div class="price">$1,497</div>
-          <div class="price-note">For serious growth & larger clients</div>
+          <div class="price-note">Full growth package</div>
           <ul>
             <li>Everything in Business Systems</li>
-            <li>Government registration support</li>
-            <li>Vendor & basic licensing checklist</li>
-            <li>Custom business docs (up to 5)</li>
-            <li>Priority onboarding support</li>
+            <li>Gov registration support</li>
+            <li>Vendor & licensing checklist</li>
+            <li>Custom docs (up to 5)</li>
+            <li>Priority onboarding</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section>
-      <h2 class="section-title">How It Works</h2>
-      <p class="section-subtitle">Simple process. No fluff, no confusion.</p>
-      <div class="card">
-        <div class="process-step">
-          <div class="step-number">1</div>
-          <div class="step-text">
-            <b>Quick intro call or email.</b><br />
-            You tell us what stage you’re at and which package makes the most sense.
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-number">2</div>
-          <div class="step-text">
-            <b>Intake form + documents.</b><br />
-            We send you a simple intake form and a short list of items we need.
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-number">3</div>
-          <div class="step-text">
-            <b>We handle the setup & systems.</b><br />
-            You get updates as we complete your registrations, profiles, and tools.
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-number">4</div>
-          <div class="step-text">
-            <b>Final handoff + support.</b><br />
-            You receive all logins, documents, and a simple checklist of what’s done.
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <!-- ========================= CONTACT ========================= -->
     <section>
       <div class="contact-box">
         <div>
           <h3 style="font-size:15px; margin-bottom:4px;">Ready to get your business set up properly?</h3>
           <p>
-            Send us a quick email with your name, business (or idea), and which package you’re interested in.
-            We’ll respond with next steps and a simple intake form.
+            Call or email us with your name and the package you're interested in.
+            We’ll reply with next steps and a simple intake form.
           </p>
         </div>
         <div class="contact-details">
+          <div><b>Phone:</b> <a href="tel:2039034807">(203) 903-4807</a></div>
           <div><b>Email:</b> <a href="mailto:getproserve@outlook.com">getproserve@outlook.com</a></div>
           <div><b>Location:</b> 113 Division St, Ansonia, CT</div>
           <div><b>Hours:</b> By appointment</div>
@@ -294,12 +264,9 @@
     </section>
 
     <footer>
-      © <span id="year"></span> ProServe Solutions. All rights reserved.
+      © <script>document.write(new Date().getFullYear());</script> ProServe Solutions. All rights reserved.
     </footer>
-  </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  </div>
 </body>
 </html>
